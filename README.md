@@ -24,22 +24,25 @@ Thomas Kipf, [Graph Convolutional Networks](http://tkipf.github.io/graph-convolu
 
 
 
-## Installation
 
-```bash
-python setup.py install
-```
 
 ## Requirements
-* TensorFlow (1.0 or later)
-* python 2.7
+* TensorFlow (2.0 or later)
+* PyTorch (1.9.0 or later)
+* python 3.8
 * networkx
 * scikit-learn
 * scipy
 
-## Run the demo
+## Run the tensorflow demo
 
 ```bash
+cd ./vgae_tensorflow
+python train.py
+```
+## Run the pytorch demo
+```bash
+cd ./vgae_pytorch
 python train.py
 ```
 
