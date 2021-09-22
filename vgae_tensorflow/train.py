@@ -38,7 +38,26 @@ model_str = FLAGS.model
 dataset_str = FLAGS.dataset
 
 # Load data
-adj, features = load_data(dataset_str)
+# adj, features = load_data(dataset_str)
+
+lists = []
+with open('D:/projects/R Projects/TME/adj.txt') as f:
+    lines = f.readlines()
+    for line in lines:
+        #print(line.strip('\n').split(','))
+        lists.append(line.strip('\n').split(','))
+adj = np.asarray(lists, dtype=np.float32)
+adj = sp.csr_matrix(adj)
+featureslist = []
+with open('D:/projects/R Projects/TME/features.txt') as f:
+    lines = f.readlines()
+    for line in lines:
+        #print(line.strip('\n').split(','))
+        featureslist.append(line.strip('\n').split(','))
+features = np.asarray(featureslist,dtype=np.float32)
+features = sp.lil_matrix(features)
+
+
 
 # Store original adjacency matrix (without diagonal entries) for later
 adj_orig = adj
